@@ -2,9 +2,10 @@ import express from "express";
 
 const router = express.Router();
 
-import { createOrder, success, webHook } from "../controllers/payments.controllers.js"
+import { createOrder, success, webHook, createUser } from "../controllers/payments.controllers.js"
 
-router.post("/create-order", createOrder);
+// payments
+router.post("/create-order", createUser, createOrder);
 
 router.get("/success", success);
 
